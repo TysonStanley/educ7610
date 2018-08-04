@@ -5,15 +5,8 @@
 
 
 
-
-#' null-default re-export from purrr
-#'
-#' @importFrom purrr %||%
-#' @name %||%
-#' @rdname null-default
-#' @export
-NULL
-
+## Infix operator (null-default)
+`%||%` <- purrr::`%||%`
 
 #' re-export magrittr pipe operator
 #'
