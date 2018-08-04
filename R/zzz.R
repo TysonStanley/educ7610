@@ -29,7 +29,7 @@
 
 .onLoad <- function(libname = find.package("rlm"), pkgname = "rlm"){
   if(getRversion() >= "2.15.1") {
-    utils::globalVariables(".")
+    utils::globalVariables(c(".", "pred", "resid"))
   }
   invisible()
 }
