@@ -13,7 +13,7 @@
 diagnostics <- function(model){
 
   ## Data frame
-  data <- model$data
+  data <- model$model
 
   ## Obtaining and combining measures
   influences <- stats::influence.measures(model)
