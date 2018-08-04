@@ -16,11 +16,10 @@ diagnostics <- function(model){
   data <- model$model
 
   ## Obtaining and combining measures
-  influences <- stats::influence.measures(model)
-  cooks <- stats::cooks.distance(model)
+  influences <- stats::influence.measures(model)$infmat %>% data.frame
   data %>%
     dplyr::mutate(pred = stats::predict(model),
                   resid = stats::resid(model)) %>%
-    dplyr::bind_cols(influences, cooks)
+    dplyr::bind_cols(influences)
 }
 
