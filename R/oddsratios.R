@@ -10,6 +10,6 @@
 #' @export
 
 oddsratios <- function(model){
-  cbind(exp(stats::coef(model)),
+  cbind("OR" = exp(stats::coef(model)),
         exp(stats::confint(model)))
 }
