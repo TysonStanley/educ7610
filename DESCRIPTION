@@ -1,7 +1,7 @@
 Package: rlm
 Type: Package
 Title: Regressional Analysis and Linear Models
-Version: 0.1.4
+Version: 0.1.5
 Author: Tyson S. Barrett
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: Useful functions and the data required for USU's EDUC 7610 course. 
@@ -14,6 +14,7 @@ LazyData: true
 Depends: 
     R (>= 2.10)
 Imports:
+    MASS,
     probemod,
     magrittr,
     dplyr,
