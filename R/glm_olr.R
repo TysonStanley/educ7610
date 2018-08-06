@@ -29,8 +29,9 @@ glm_olr <- function(formula, data, ...){
   coefs <- stats::coef(summary(fit))
   p <- stats::pnorm(abs(coefs[, "t value"]), lower.tail = FALSE) * 2
 
-  output <- list("coef" = cbind(coefs, "p value" = p),
-                 "polr" = fit)
+  output <- list("results" = cbind(coefs, "p value" = p),
+                 "polr"    = fit,
+                 "coef"    = fit$coef)
   class(output) <- "glm_olr"
   output
 }
@@ -40,7 +41,7 @@ glm_olr <- function(formula, data, ...){
 print.glm_olr <- function(x, ...){
 
   cat("Ordinal Logistic Regression\n")
-  print.default(round(x[["coef"]], 4))
+  print.default(round(x[["results"]], 4))
   cat("---\n")
 
 }
