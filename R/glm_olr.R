@@ -41,7 +41,7 @@ glm_olr <- function(formula, data, ...){
 print.glm_olr <- function(x, ...){
 
   cat("Ordinal Logistic Regression\n")
-  print.default(round(x[["results"]], 5))
+  print.default(x[["results"]], digits = 5)
   cat("---\n")
 
 }
