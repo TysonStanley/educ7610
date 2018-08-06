@@ -24,9 +24,20 @@ glm_olr <- function(formula, data, ...){
   output
 }
 
+#' @export
 print.glm_olr <- function(x, ...){
 
   cat("Ordinal Logistic Regression\n")
   x$coef
   cat("\n---\n")
+}
+
+#' @export
+coef.glm_olr <- function(object, ...){
+  object$coef
+}
+
+#' @export
+confint.glm_olr <- function(object, parm, level = 0.95, ...){
+  confint(object$polr)
 }
