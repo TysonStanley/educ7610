@@ -14,22 +14,35 @@
 
 glm_olr <- function(formula, data, ...){
 
-  fit <- MASS::polr(formula, data, ...)
-  ctable <- stats::coef(summary(fit))
-  p <- stats::pnorm(abs(ctable[, "t value"]), lower.tail = FALSE) * 2
+  m <- match.call()
 
-  output <- list("coef" = cbind(ctable, "p value" = p),
+  ## For pipes
+  if (m$data == "."){
+    data <- data
+    m$data <- substitute(data)
+  }
+
+  ## Use MASS::polr for the evaluation
+  m[[1L]] <- quote(MASS::polr)
+  fit <- eval.parent(m)
+
+  coefs <- stats::coef(summary(fit))
+  p <- stats::pnorm(abs(coefs[, "t value"]), lower.tail = FALSE) * 2
+
+  output <- list("coef" = cbind(coefs, "p value" = p),
                  "polr" = fit)
   class(output) <- "glm_olr"
   output
 }
 
+
 #' @export
 print.glm_olr <- function(x, ...){
 
   cat("Ordinal Logistic Regression\n")
-  x$coef
-  cat("\n---\n")
+  print.default(round(x[["coef"]], 4))
+  cat("---\n")
+
 }
 
 #' @export
