@@ -1,7 +1,7 @@
-Package: rlm
+Package: educ7610
 Type: Package
 Title: Regressional Analysis and Linear Models
-Version: 0.1.7
+Version: 0.2.0
 Author: Tyson S. Barrett
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: Useful functions and the data required for USU's EDUC 7610 course. 
@@ -25,4 +25,4 @@ Imports:
     tibble
 Suggests:
     margins
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
