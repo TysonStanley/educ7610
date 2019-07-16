@@ -12,7 +12,8 @@
 #' @export
 mt_adjust <- function(model, adjustment) {
 
-  coefs <- data.frame(coef(model))
+  mod <- summary(model)
+  coefs <- data.frame(coef(mod))
   coefs[[4]] <- stats::p.adjust(coefs[[4]], adjustment)
   coefs
 
