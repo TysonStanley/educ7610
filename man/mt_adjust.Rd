@@ -9,7 +9,7 @@ mt_adjust(model, adjustment)
 \arguments{
 \item{model}{the regression model}
 
-\item{adjustment}{the type of adjustment}
+\item{adjustment}{the type of adjustment (any that `stats::p.adjust()` can handle)}
 }
 \value{
 a data.frame
