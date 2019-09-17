@@ -1,0 +1,41 @@
+---
+output: github_document
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# `educ7610`
+
+
+The goal of `educ7610` is to make several aspects of the Regression course (EDUC/PSY 7610) at Utah State University more accessible. Specifically, it provides the data from Darlington and Hayes' book "Regression Analysis and Linear Models", a syntax to perform diagnostics and Johnson-Neyman, odds ratios from logistic regression, among other things. In conjunction with packages like `interactions` and the `easystats` group of packages, this package can make regression analyses more straightforward.
+
+## Installation
+
+You can install the development version from GitHub with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("tysonstanley/educ7610")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(educ7610)
+data("poverty")  ## load the poverty data set
+
+model <- lm(TeenBirth ~ ViolentCrime + poverty_pct,
+           data = poverty)
+diagnostics(model) %>% head()
+```
+

@@ -1,7 +1,7 @@
 Package: educ7610
 Type: Package
 Title: Regressional Analysis and Linear Models
-Version: 0.2.1
+Version: 0.2.2
 Author: Tyson S. Barrett
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: Useful functions and the data required for USU's EDUC 7610 course. 
