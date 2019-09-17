@@ -2,6 +2,7 @@
 
 S3method(coef,glm_olr)
 S3method(confint,glm_olr)
+S3method(predict,glm_olr)
 S3method(print,glm_olr)
 export("%>%")
 export(cond_effect)

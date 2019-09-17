@@ -55,3 +55,8 @@ coef.glm_olr <- function(object, ...){
 confint.glm_olr <- function(object, parm, level = 0.95, ...){
   confint(object$polr)
 }
+
+#' @export
+predict.glm_olr <- function(object, ...){
+  predict(object$polr, ...)
+}
